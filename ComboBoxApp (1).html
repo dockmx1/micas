@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComboBox App</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataA = ["SAM A11", "XIAOMI REDMI12", "SAM A10", "P30 LITE", "SAM A10", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "HUAWEI Y9 PRIME 2019", "HUAWEI Y9 PRIME 2019", "MOTO G22", "MOTO G22", "MOTO G22", "MOTO G22", "MOTO G22", "MOTO G22", "SAM A10", "SAM A10", "SAM A10", "MOTO G10 POWER", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "SAM A80", "XIAOMI REDMI12", "XIAOMI REDMI12", "MOTO G8 POWER LITE", "XIAOMI REDMI12", "MOTO G14", "MOTO G53", "XIAOMI REDMI12", "XIAOMI REDMI12", "MOTO G8 POWER LITE", "SAM A05", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "MOTO G22", "ZTE A31", "HUAWEI Y9 PRIME 2019", "HUAWEI Y9 PRIME 2019", "SAM A14", "OPPO RENO 5 LITE", "OPPO RENO 5 LITE", "SAM A20", "MOTO G9 POWER", "HUAWEI Y9 PRIME 2019", "REDMI 9T", "MOTO G41", "MOTO G8 POWER LITE", "XIAOMI REDMI12", "REDMI NOTE 10", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "PG8 POWER LITE", "SAM A01", "SAM A10", "HUAWEI Y9 PRIME 2019", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "MOTO G50", "MOTO G14", "MOTO G14", "SAM A15", "MOTO G8 POWER LITE", "HUAWEI Y9 PRIME 2019", "HUAWEI Y9 PRIME 2019", "SAM A20", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "SAM A22 5G", "MOTO G8 POWER LITE", "SAM A24", "SAM A20", "SAM A20", "SAM A20", "SAM A52", "SAM A20", "MOTO G8 POWER LITE", "SAM A20", "SAM A34", "SAM A20", "SAM A20", "SAM A53", "IPHONE 14 PRO MAX", "HUAWEI Y9 PRIME 2019", "SAM A10", "MOTO G8 POWER LITE", "SAM A54", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "SAM A33", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "SAM A11", "MOTO G8 POWER LITE", "OPPO RENO 5 LITE", "OPPO RENO 5 LITE", "OPPO RENO 5 LITE", "OPPO RENO 5 LITE", "HUAWEI P30 LITE", "MOTO G8 POWER LITE", "MOTO G8 POWER LITE", "SAM A14", "SAM A20"];
+            const dataB = ["AXON A50", "HONOR 50 LITE", "HUAWEI Y6 2019", "HUAWEI Y6 2019", "HUAWEI Y6S", "HUAWEI Y7A", "HUAWEI Y7P", "HUAWEI Y9A", "HUAWEI Y9S", "LG K51", "MOTO E13", "MOTO E22", "MOTO E30", "MOTO E32", "MOTO E40", "MOTO E6I", "MOTO E6PLUS", "MOTO E6S", "MOTO E7", "MOTO E7 POWER", "MOTO E7PLUS", "MOTO G PURE", "MOTO G10 POWER", "MOTO G10/20/30", "MOTO G22", "MOTO G40", "MOTO G40 FUSION", "MOTO G50", "MOTO G51", "MOTO G52", "MOTO G54", "MOTO G60", "MOTO G60S", "MOTO G9", "MOTO G9 POWER", "MOTO G9PLAY", "OPPO A15", "OPPO A16", "OPPO A38", "OPPO A52", "OPPO A53", "OPPO A54", "OPPO AXON 50 LITE", "OPPO RENO 6 LITE", "OPPO RENO 7", "POCCO M5S", "POCO C35", "POCO X3", "POCO X6 PRO", "POCO X6 PRO", "REDMI 02", "REDMI 10C", "REDMI NOTE 12S", "SAM A02", "SAM A02S", "SAM A03", "SAM A05S", "SAM A10E", "SAM A10S", "SAM A11", "SAM A12", "SAM A13", "SAM A14", "SAM A15", "SAM A15", "SAM A20S", "SAM A20S", "SAM A21", "SAM A21S", "SAM A22 4G", "SAM A22 5G", "SAM A225G", "SAM A23", "SAM A23", "SAM A25", "SAM A30", "SAM A30S", "SAM A31", "SAM A32", "SAM A32 4G", "SAM A32 5G", "SAM A33", "SAM A35", "SAM A50", "SAM A52", "SAM A54", "SAM A55", "SAM M11", "SAM S20 FE", "SAM S21 ULTRA", "SAM S23 FE", "SAMS A03S", "SAMS A04", "VIVIO Y21", "VIVO Y20", "VIVO Y22S", "VIVO Y25E", "XIAOMI HONOR 40 LITE", "XIAOMI NOTE 10S", "XIAOMI NOTE 11S", "XIAOMI NOTE10", "XIAOMI NOTE11", "ZTE A5 2020", "ZTE A54", "ZTE A7S", "ZTE ACCTION", "ZTE L220"];
+
+            const selectElement = document.getElementById('comboBox');
+            const displayElement = document.getElementById('display');
+
+            // Llenar el combobox con los elementos de la columna B
+            dataB.forEach((item, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = item;
+                selectElement.appendChild(option);
+            });
+
+            // Mostrar el elemento correspondiente de la columna A al seleccionar
+            selectElement.addEventListener('change', function() {
+                const selectedIndex = selectElement.value;
+                displayElement.textContent = dataA[selectedIndex];
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>ComboBox App</h1>
+    <select id="comboBox">
+        <option value="" disabled selected>Select an option</option>
+    </select>
+    <p id="display"></p>
+</body>
+</html>
